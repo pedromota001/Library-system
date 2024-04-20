@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Biblioteca {
     public ArrayList<Livro> listaDeLivros;
 
-    public Biblioteca(ArrayList<Livro> listaDeLivros) {
+    public Biblioteca() {
         this.listaDeLivros = new ArrayList<Livro>();
     }
 
