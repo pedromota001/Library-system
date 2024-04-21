@@ -1,54 +1,54 @@
 package br.com.pedromota.segundoprojeto.pessoas;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GerenciaListaUsuarios {
-    public ArrayList<Usuario> listaUsuarios;
-    private Usuario usuarioLogado;
+    private HashMap<String, Pessoa> mapaUsuarios;
+    private Pessoa usuarioLogado;
 
     public GerenciaListaUsuarios() {
-        this.listaUsuarios = new ArrayList<Usuario>();
+        this.mapaUsuarios = new HashMap<>();
     }
 
-    public Usuario getUsuarioLogado() {
+    public Pessoa getUsuarioLogado() {
         return usuarioLogado;
     }
 
-    public void setUsuarioLogado(Usuario usuarioLogado) {
+    public void setUsuarioLogado(Pessoa usuarioLogado) {
         this.usuarioLogado = usuarioLogado;
     }
 
-    public void addUsuario(Usuario usuario){
-        for(Usuario u:listaUsuarios){
-            if(u.getUsuario().equalsIgnoreCase(usuario.getUsuario())){
-                System.out.println(("Nome de usuario já cadastrado, tente com outro nome"));
-            }
-            else{
-                this.listaUsuarios.add(usuario);
-            }
-        }
-    }
-    public void removerUsuario(Usuario usuario){
-        for(Usuario u: listaUsuarios){
-            if(u.getUsuario().equalsIgnoreCase(usuario.getUsuario())){
-                System.out.println("Removendo usuario...");
-                this.listaUsuarios.remove((usuario));
-            }
-            else{
-                System.out.println("Usuario não encontrado, remoção não efetuada.");
-            }
+    public void addUsuario(Pessoa usuario){
+        if (mapaUsuarios.containsKey(usuario.getUsuario())) {
+            System.out.println("Nome de usuário já cadastrado, tente com outro nome");
+        } else {
+            mapaUsuarios.put(usuario.getUsuario(), usuario);
         }
     }
 
-    public void verificaLista(Usuario usuario){
-        for(Usuario u:listaUsuarios){
-            if(u.getUsuario().equalsIgnoreCase(usuario.getUsuario())){
-                System.out.println("Usuario encontrado no sistema!");
-            }
-            else{
-                System.out.println("Usuario nao encontrado no sistema!");
-                return;
-            }
+    public void removerUsuario(Pessoa usuario){
+        if (mapaUsuarios.containsKey(usuario.getUsuario())) {
+            mapaUsuarios.remove(usuario.getUsuario());
+            System.out.println("Usuário removido com sucesso.");
+        } else {
+            System.out.println("Usuário não encontrado, remoção não efetuada.");
+        }
+    }
+
+    public Pessoa verificaLogin(String usuario, String senha){
+        Pessoa usuarioEncontrado = mapaUsuarios.get(usuario);
+        if (usuarioEncontrado != null && usuarioEncontrado.getSenha().equals(senha)) {
+            System.out.println("Login bem sucedido!");
+            return usuarioEncontrado;
+        } else {
+            System.out.println("Nome de usuário ou senha incorretos.");
+            return null;
+        }
+    }
+
+    public void exibeUsuariosSistema(){
+        for(Pessoa p: mapaUsuarios.values()){
+            System.out.println(p);
         }
     }
 }

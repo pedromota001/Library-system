@@ -20,20 +20,48 @@ public class Biblioteca {
             }
             else{
                 this.listaDeLivros.add(l);
+                l.setStatus(true);
             }
         }
     }
-    public void removerLivro(Livro l){
+    public void removerLivro(String id){
         for(Livro livro:listaDeLivros){
-            if(livro.getIdLivro().equalsIgnoreCase(l.getIdLivro())){
+            if(livro.getIdLivro().equalsIgnoreCase(id)){
                 System.out.println("Removendo livro...");
-                this.listaDeLivros.remove(l);
+                this.listaDeLivros.remove(livro);
             }
             else{
                 System.out.println("Livro não encontrado na biblioteca");
             }
         }
     }
+
+    public void exibeListaDisponiveis(){
+        for(Livro livro: listaDeLivros){
+            if(livro.isStatus()) {
+                System.out.println(livro);
+            }
+        }
+    }
+    public void exibeTodosLivros(){
+        for(Livro livro: listaDeLivros){
+            System.out.println(livro);
+        }
+    }
+    public void exibeIndisponiveis(){
+        for(Livro livro:listaDeLivros){
+            if(!livro.isStatus()){
+                System.out.println(livro);
+            }
+        }
+    }
+
+
+
+
+
+
+
     //public void emprestimo(Livro l)
 }
 
