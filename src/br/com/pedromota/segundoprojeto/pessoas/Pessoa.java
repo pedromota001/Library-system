@@ -3,7 +3,7 @@ package br.com.pedromota.segundoprojeto.pessoas;
 public class Pessoa {
     //pessoas que vão interagir c a biblioteca, manipular permissoes atraves de subclasses de pessoas.
     private String nome;
-    private String endereço;
+    private String endereco;
     private String telefone;
 
     public String getNome() {
@@ -14,12 +14,12 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereço(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getTelefone() {
@@ -32,9 +32,12 @@ public class Pessoa {
     private String usuario;
     private String senha;
 
-    public Pessoa(String usuario, String senha) {
+    public Pessoa(String usuario, String senha, String nome, String endereco, String telefone) {
         this.usuario = usuario;
         this.senha = senha;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
     }
 
     public String getUsuario() {

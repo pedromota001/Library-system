@@ -1,7 +1,6 @@
 package br.com.pedromota.segundoprojeto;
 
 import br.com.pedromota.segundoprojeto.livros.Livro;
-import br.com.pedromota.segundoprojeto.pessoas.Cliente;
 
 import java.util.ArrayList;
 
@@ -13,26 +12,29 @@ public class Biblioteca {
     }
 
     public void adicionarLivro(Livro l){
-        for(Livro livro:listaDeLivros){
+        for(Livro livro: listaDeLivros){
             if(livro.getIdLivro().equalsIgnoreCase(l.getIdLivro())){
-                System.out.println("Livro ja adicionado na biblioteca, erro ao adicionar ao sistema.");
+                System.out.println("Livro já adicionado na biblioteca, erro ao adicionar ao sistema.");
                 return;
             }
-            else{
-                this.listaDeLivros.add(l);
-                l.setStatus(true);
-            }
         }
+        this.listaDeLivros.add(l);
+        l.setStatus(true);
+        System.out.println("Livro adicionado!");
     }
+
+
     public void removerLivro(String id){
+        boolean achou = false;
         for(Livro livro:listaDeLivros){
             if(livro.getIdLivro().equalsIgnoreCase(id)){
+                achou = true;
                 System.out.println("Removendo livro...");
                 this.listaDeLivros.remove(livro);
             }
-            else{
-                System.out.println("Livro não encontrado na biblioteca");
-            }
+        }
+        if(!achou){
+            System.out.println("Livro nao encontrado, erro na remocao");
         }
     }
 
@@ -43,11 +45,16 @@ public class Biblioteca {
             }
         }
     }
-    public void exibeTodosLivros(){
-        for(Livro livro: listaDeLivros){
-            System.out.println(livro);
+    public void exibeTodosLivros() {
+        if (listaDeLivros.isEmpty()) {
+            System.out.println("Lista vazia!");
+        } else {
+            for (Livro livro : listaDeLivros) {
+                System.out.println(livro);
+            }
         }
     }
+
     public void exibeIndisponiveis(){
         for(Livro livro:listaDeLivros){
             if(!livro.isStatus()){

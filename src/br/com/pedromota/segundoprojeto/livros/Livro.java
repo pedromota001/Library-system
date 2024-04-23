@@ -84,11 +84,9 @@ public abstract class Livro {
     public boolean isStatus() {
         return status;
     }
-
     public void setStatus(boolean status) {
         this.status = status;
     }
-
     public void setListaAvaliacoes(double nota){
         this.listaAvaliacoes.add(nota);
     }

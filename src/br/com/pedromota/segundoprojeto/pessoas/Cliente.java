@@ -10,11 +10,12 @@ public class Cliente extends Pessoa{
     private String idCliente;
     public ArrayList<Livro> listaLivrosEmprestados;
 
-    public Cliente(String usuario, String senha, String idCliente, ArrayList<Livro> listaLivrosEmprestados) {
-        super(usuario, senha);
-        this.idCliente = idCliente;
-        this.listaLivrosEmprestados = listaLivrosEmprestados;
+    public Cliente(String usuario, String senha, String nome, String endereco, String telefone, String id) {
+        super(usuario, senha, nome, endereco, telefone);
+        this.idCliente = id;
+        this.listaLivrosEmprestados = new ArrayList<>();
     }
+
 
     public String getIdCliente() {
         return idCliente;
