@@ -194,14 +194,14 @@ public class Main {
                                 biblioteca.exibeTodosLivros();
                                 break;
                             case 5:
+                                biblioteca.exibeTodosLivros();
                                 System.out.println("Digite o ID do livro que voce deseja remover: ");
                                 String id = scanner.nextLine();
                                 biblioteca.removerLivro(id);
-                                //revisar funcao de remover pra ver se esta certa
                                 break;
                             case 6:
-                                System.out.println("Exibir lista de clientes");
-                                //implementar funcao dia 24/04/2024
+                                System.out.println("Exibindo lista de clientes:");
+                                //implementar funcao
                                 break;
                             case 0:
                                 System.out.println("Encerrando...");
