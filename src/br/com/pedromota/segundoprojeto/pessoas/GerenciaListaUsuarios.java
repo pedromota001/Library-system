@@ -39,6 +39,7 @@ public class GerenciaListaUsuarios {
         Pessoa usuarioEncontrado = mapaUsuarios.get(usuario);
         if (usuarioEncontrado != null && usuarioEncontrado.getSenha().equals(senha)) {
             System.out.println("Login bem sucedido!");
+            setUsuarioLogado(usuarioEncontrado);
             return usuarioEncontrado;
         } else {
             System.out.println("Nome de usuário ou senha incorretos.");

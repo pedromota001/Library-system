@@ -95,4 +95,9 @@ public abstract class Livro {
             avaliacaoMedia += n;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Titulo: " + getTitulo() + " //Autor: " + getAutor() + " //Editora: " + getEditora() + " //Ano de publicacao: " + getAnoDePublicacao() + " //Avaliacao: " + getAvaliacaoMedia();
+    }
 }
