@@ -63,7 +63,24 @@ public class Biblioteca {
         }
     }
 
-
+    public void adicionaSinopse(String id, String sinopse){
+        boolean achou = false;
+        for(Livro l:listaDeLivros){
+            if(l.getIdLivro().equalsIgnoreCase(id)){
+                achou = true;
+                System.out.println("Adicionando sinopse...");
+                l.setSinopse(sinopse);
+                System.out.println(l.getSinopse());
+                return;
+            }
+        }
+        if(!achou){
+            System.out.println("Erro, Livro nao encontrado");
+        }
+    }
+    public void exibeSinopse(String id){
+        //implementar
+    }
 
 
 

@@ -1,10 +1,9 @@
 package br.com.pedromota.segundoprojeto;
 
 
-import br.com.pedromota.segundoprojeto.livros.Livro;
 import br.com.pedromota.segundoprojeto.livros.LivroFiccao;
 import br.com.pedromota.segundoprojeto.livros.LivroRomance;
-import br.com.pedromota.segundoprojeto.livros.LivroSuspense;
+import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
 import br.com.pedromota.segundoprojeto.pessoas.*;
 
 import java.util.Scanner;
@@ -102,11 +101,12 @@ public class Main {
                         System.out.println("Escolha uma opcao: ");
                         System.out.println("Opcao 1 - Adicionar livro ao sistema");
                         System.out.println("Opcao 2 - Exibir lista de livros disponiveis no sistema");
-                        System.out.println("Opcao 3 - Exibir lista de livros Indisponiveis no sistema");
+                        System.out.println("Opcao 3 - Exibir lista de livros indisponiveis no sistema");
                         System.out.println("Opcao 4 - Exibir lista de todos os livros");
                         System.out.println("Opcao 5 - Remover livro do sistema");
                         System.out.println("Opcao 6 - Exibir lista de clientes");
                         System.out.println("Opcao 7 - Adicionar sinopse a um livro");
+                        System.out.println("Opcao 8 - Exibir sinopse de livro");
                         System.out.println("Opcao 0 - Sair");
                         int resp = scanner.nextInt();
                         scanner.nextLine();
@@ -117,6 +117,7 @@ public class Main {
                                 System.out.println("Insira o nome do livro que voce deseja adicionar: ");
                                 String tituloLivro = scanner.nextLine();
                                 tipoLivro = tipoLivro.toLowerCase();
+
                                 if(tipoLivro.equalsIgnoreCase("romance")){
                                     System.out.println("Informe o autor do livro: ");
                                     String autorMain = scanner.nextLine();
@@ -126,11 +127,14 @@ public class Main {
                                     String editoraMain = scanner.nextLine();
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
+
                                     LivroRomance livro = new LivroRomance(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
                                     respSinopse = respSinopse.toLowerCase();
                                     scanner.nextLine();
+
                                     if(respSinopse.equalsIgnoreCase("sim")){
                                         System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
                                         String sinopseMain = scanner.nextLine();
@@ -147,11 +151,14 @@ public class Main {
                                     String editoraMain = scanner.nextLine();
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
-                                    LivroSuspense livro = new LivroSuspense(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
                                     respSinopse =  respSinopse.toLowerCase();
                                     scanner.nextLine();
+
                                     if(respSinopse.equalsIgnoreCase("sim")){
                                         System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
                                         String sinopseMain = scanner.nextLine();
@@ -168,11 +175,14 @@ public class Main {
                                     String editoraMain = scanner.nextLine();
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
+
                                     LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
                                     respSinopse =  respSinopse.toLowerCase();
                                     scanner.nextLine();
+
                                     if(respSinopse.equalsIgnoreCase("sim")){
                                         System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
                                         String sinopseMain = scanner.nextLine();
@@ -201,7 +211,16 @@ public class Main {
                                 break;
                             case 6:
                                 System.out.println("Exibindo lista de clientes:");
-                                //implementar funcao
+                                gerenciaListaUsuarios.exibirClientes();
+                                break;
+                            case 7:
+                                System.out.println("Digite o id do livro: ");
+                                String idSinopse = scanner.nextLine();
+                                System.out.println("Digite a sinopse para esse livro: ");
+                                String sinopseAdd = scanner.nextLine();
+                                biblioteca.adicionaSinopse(idSinopse,sinopseAdd);
+                                break;
+                            case 8:
                                 break;
                             case 0:
                                 System.out.println("Encerrando...");
@@ -209,10 +228,134 @@ public class Main {
                                 break;
                         }
                     }
+                    else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Professor){
+                        System.out.println("""
+                                Menu de opcoes:
+                                1 - Adicionar livro ao sistema
+                                2 - Exibir lista de livros disponiveis
+                                3 - Adicionar ou editar sinopse
+                                4 - Exibir lista de alunos da biblioteca
+                                5 - Exibir sinopse de um livro
+                                0 - Sair
+                                """);
+                        int respProf = scanner.nextInt();
+                        switch (respProf){
+                            case 1:
+                                System.out.println("Insira o tipo de livro que voce deseja adicionar: [Romance, academico, suspense] ");
+                                String tipoLivro = scanner.nextLine();
+                                System.out.println("Insira o nome do livro que voce deseja adicionar: ");
+                                String tituloLivro = scanner.nextLine();
+                                tipoLivro = tipoLivro.toLowerCase();
+
+                                if(tipoLivro.equalsIgnoreCase("romance")){
+                                    System.out.println("Informe o autor do livro: ");
+                                    String autorMain = scanner.nextLine();
+                                    System.out.println("Informe o id do livro que sera adicionado: ");
+                                    String idMain = scanner.nextLine();
+                                    System.out.println("Informe a editora do livro: ");
+                                    String editoraMain = scanner.nextLine();
+                                    System.out.println("Informe o ano de lancamento do livro: ");
+                                    String anoDePublicacaoMain = scanner.nextLine();
+
+                                    LivroRomance livro = new LivroRomance(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
+                                    String respSinopse = scanner.next();
+                                    respSinopse = respSinopse.toLowerCase();
+                                    scanner.nextLine();
+
+                                    if(respSinopse.equalsIgnoreCase("sim")){
+                                        System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
+                                        String sinopseMain = scanner.nextLine();
+                                        livro.setSinopse(sinopseMain);
+                                    }
+                                    biblioteca.adicionarLivro(livro);
+                                }
+                                else if(tipoLivro.equalsIgnoreCase("academico")){
+                                    System.out.println("Informe o autor do livro: ");
+                                    String autorMain = scanner.nextLine();
+                                    System.out.println("Informe o id do livro que sera adicionado: ");
+                                    String idMain = scanner.nextLine();
+                                    System.out.println("Informe a editora do livro: ");
+                                    String editoraMain = scanner.nextLine();
+                                    System.out.println("Informe o ano de lancamento do livro: ");
+                                    String anoDePublicacaoMain = scanner.nextLine();
+
+                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
+                                    String respSinopse = scanner.next();
+                                    respSinopse =  respSinopse.toLowerCase();
+                                    scanner.nextLine();
+
+                                    if(respSinopse.equalsIgnoreCase("sim")){
+                                        System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
+                                        String sinopseMain = scanner.nextLine();
+                                        livro.setSinopse(sinopseMain);
+                                    }
+
+                                    biblioteca.adicionarLivro(livro);
+                                }
+                                else{
+                                    System.out.println("Informe o autor do livro: ");
+                                    String autorMain = scanner.nextLine();
+                                    System.out.println("Informe o id do livro que sera adicionado: ");
+                                    String idMain = scanner.nextLine();
+                                    System.out.println("Informe a editora do livro: ");
+                                    String editoraMain = scanner.nextLine();
+                                    System.out.println("Informe o ano de lancamento do livro: ");
+                                    String anoDePublicacaoMain = scanner.nextLine();
+
+                                    LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
+                                    String respSinopse = scanner.next();
+                                    respSinopse =  respSinopse.toLowerCase();
+                                    scanner.nextLine();
+
+                                    if(respSinopse.equalsIgnoreCase("sim")){
+                                        System.out.println("Insira a sinopse do livro: " + livro.getTitulo());
+                                        String sinopseMain = scanner.nextLine();
+                                        livro.setSinopse(sinopseMain);
+                                    }
+                                    biblioteca.adicionarLivro(livro);
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Exibindo lista de livros disponiveis no sistema: ");
+                                biblioteca.exibeListaDisponiveis();
+                                break;
+                            case 3:
+                                System.out.println("Digite o ID do livro: ");
+                                String id = scanner.nextLine();
+                                System.out.println("Digite a sinopse do livro: ");
+                                String sinopse = scanner.nextLine();
+                                biblioteca.adicionaSinopse(id, sinopse);
+                                break;
+                            case 4:
+                                System.out.println("Exibindo lista de alunos da biblioteca: ");
+                                gerenciaListaUsuarios.exibirAlunos();
+                                break;
+                            case 5:
+                                break;
+                            case 0:
+                                System.out.println("Encerrando...");
+                                gerenciaListaUsuarios.setUsuarioLogado(null);
+                                break;
+                        }
+                    }
+                    else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Aluno){
+                        System.out.println("""
+                                Menu de opcoes:
+                                1 - Pegar livro emprestado
+                                2 - Devolver livro
+                                """);
+                        //implementar funcoes e adicionar novas opcoes no menu do aluno
+                    }
                 }
 
 
-
+                // Alunos so podem pegar emprestado livros academicos, cliente tem permissao para todos os livros
 
 
 

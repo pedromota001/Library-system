@@ -1,0 +1,8 @@
+package br.com.pedromota.segundoprojeto.livros;
+
+public class LivroAcademico extends Livro{
+
+    public LivroAcademico(String autor, String idLivro, String titulo, String editora, String anoDePublicacao) {
+        super(autor, idLivro, titulo, editora, anoDePublicacao);
+    }
+}

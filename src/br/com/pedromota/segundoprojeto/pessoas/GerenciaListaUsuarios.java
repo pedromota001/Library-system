@@ -47,9 +47,32 @@ public class GerenciaListaUsuarios {
         }
     }
 
+
+    public void exibirClientes(){
+        for(Pessoa p:mapaUsuarios.values()){
+            if(p instanceof Cliente || p instanceof Aluno){
+                System.out.println(p);
+            }
+        }
+    }
     public void exibeUsuariosSistema(){
         for(Pessoa p: mapaUsuarios.values()){
             System.out.println(p);
         }
     }
+    public void exibirAlunos(){
+        boolean achou = false;
+        for(Pessoa p:mapaUsuarios.values()){
+            if(p instanceof Aluno){
+                achou = true;
+                System.out.println(p);
+            }
+        }
+
+        if(!achou){
+            System.out.println("Nenhum aluno esta cadastrado no sistema!");
+        }
+
+    }
+
 }
