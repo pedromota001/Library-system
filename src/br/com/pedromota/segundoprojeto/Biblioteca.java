@@ -1,6 +1,7 @@
 package br.com.pedromota.segundoprojeto;
 
 import br.com.pedromota.segundoprojeto.livros.Livro;
+import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
 
 import java.util.ArrayList;
 
@@ -78,15 +79,44 @@ public class Biblioteca {
             System.out.println("Erro, Livro nao encontrado");
         }
     }
-    public void exibeSinopse(String id){
-        //implementar
+    public void exibeSinopse(String nome){
+        for(Livro l: listaDeLivros){
+            if(l.getTitulo().equalsIgnoreCase(nome)){
+                System.out.println(l.getSinopse());
+                return;
+            }
+        }
+        System.out.println("Erro ao exibir sinopse");
     }
 
 
 
 
+    public Livro emprestimoAluno(String nome){
+        for(Livro l:listaDeLivros){
+            if(l.getTitulo().equalsIgnoreCase(nome) && l instanceof LivroAcademico){
+                if(l.isStatus()){
+                    l.setStatus(false);
+                    return l;
+                }
+            }
+        }
+        System.out.println("Erro ao adicionar livro, livro nao encontrado, indisponivel ou nao academico");
+        return null;
+    }
 
-    //public void emprestimo(Livro l)
+    public Livro devolucaoAluno(String nome){
+        for(Livro l: listaDeLivros){
+            if(l.getTitulo().equalsIgnoreCase(nome) && l instanceof LivroAcademico){
+                if(!l.isStatus()){
+                    l.setStatus(true);
+                    return l;
+                }
+            }
+        }
+        System.out.println("Erro ao devolver livro, livro nao encontrado no sistema ou ja disponivel para emprestimo!");
+        return null;
+    }
 }
 
 

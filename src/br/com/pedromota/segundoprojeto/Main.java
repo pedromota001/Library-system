@@ -1,6 +1,7 @@
 package br.com.pedromota.segundoprojeto;
 
 
+import br.com.pedromota.segundoprojeto.livros.Livro;
 import br.com.pedromota.segundoprojeto.livros.LivroFiccao;
 import br.com.pedromota.segundoprojeto.livros.LivroRomance;
 import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
@@ -176,7 +177,7 @@ public class Main {
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
 
-                                    LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -221,6 +222,10 @@ public class Main {
                                 biblioteca.adicionaSinopse(idSinopse,sinopseAdd);
                                 break;
                             case 8:
+                                biblioteca.exibeTodosLivros();
+                                System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
+                                String nomeSinopse = scanner.nextLine();
+                                biblioteca.exibeSinopse(nomeSinopse);
                                 break;
                             case 0:
                                 System.out.println("Encerrando...");
@@ -337,6 +342,10 @@ public class Main {
                                 gerenciaListaUsuarios.exibirAlunos();
                                 break;
                             case 5:
+                                biblioteca.exibeListaDisponiveis();
+                                System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
+                                String nomeSinopse = scanner.nextLine();
+                                biblioteca.exibeSinopse(nomeSinopse);
                                 break;
                             case 0:
                                 System.out.println("Encerrando...");
@@ -347,19 +356,62 @@ public class Main {
                     else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Aluno){
                         System.out.println("""
                                 Menu de opcoes:
-                                1 - Pegar livro emprestado
+                                1 - Pegar livro emprestado(Apenas academicos)
                                 2 - Devolver livro
+                                3 - Exibir livros disponiveis
+                                4 - Exibir meus livros
+                                5 - Exibir sinopse de livro
+                                0 - Sair
                                 """);
-                        //implementar funcoes e adicionar novas opcoes no menu do aluno
+                        int respAluno = scanner.nextInt();
+                        scanner.nextLine();
+                        switch (respAluno){
+                            case 1:
+                                biblioteca.exibeListaDisponiveis();
+                                System.out.println("Digite o nome do livro que voce deseja: ");
+                                String nomeLivro = scanner.nextLine();
+                                Livro livro = biblioteca.emprestimoAluno(nomeLivro);
+                                if(livro == null){
+                                    System.out.println("Erro ao fazer emprestimo, tente novamente! ");
+                                }
+                                else{
+                                    ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.add(livro);
+                                }
+                                break;
+                            case 2:
+                                ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
+                                System.out.println("Digite o nome do livro que voce ira devolver: ");
+                                String nomeDevolucao = scanner.nextLine();
+                                Livro livro1 = biblioteca.devolucaoAluno(nomeDevolucao);
+                                if(livro1 == null){
+                                    System.out.println("Erro ao fazer devolucao, tente novamente!");
+                                }
+                                else{
+                                    ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.remove(livro1);
+                                }
+                                break;
+                            case 3:
+                                System.out.println("Exibindo lista de disponiveis: ");
+                                biblioteca.exibeListaDisponiveis();
+                                break;
+                            case 4:
+                                ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
+                                break;
+                            case 5:
+                                biblioteca.exibeListaDisponiveis();
+                                System.out.println("Digite o nome do livro que voce deseja visualizar a sinopse: ");
+                                String nomeSinopse = scanner.nextLine();
+                                biblioteca.exibeSinopse(nomeSinopse);
+                                break;
+                            case 0:
+                                System.out.println("Encerrando...");
+                                gerenciaListaUsuarios.setUsuarioLogado(null);
+                                break;
+                        }
                     }
                 }
 
-
                 // Alunos so podem pegar emprestado livros academicos, cliente tem permissao para todos os livros
-
-
-
-
 
 
 

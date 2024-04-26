@@ -1,5 +1,7 @@
 package br.com.pedromota.segundoprojeto.pessoas;
 
+import br.com.pedromota.segundoprojeto.livros.Livro;
+
 import java.util.HashMap;
 
 public class GerenciaListaUsuarios {
@@ -74,5 +76,4 @@ public class GerenciaListaUsuarios {
         }
 
     }
-
 }
