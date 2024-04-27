@@ -143,7 +143,7 @@ public class Main {
                                     }
                                     biblioteca.adicionarLivro(livro);
                                 }
-                                else if(tipoLivro.equalsIgnoreCase("suspense")){
+                                else if(tipoLivro.equalsIgnoreCase("ficcao")){
                                     System.out.println("Informe o autor do livro: ");
                                     String autorMain = scanner.nextLine();
                                     System.out.println("Informe o id do livro que sera adicionado: ");
@@ -153,7 +153,7 @@ public class Main {
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
 
-                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+                                    LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -234,6 +234,7 @@ public class Main {
                         }
                     }
                     else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Professor){
+                        System.out.println("Bem vindo professor " + gerenciaListaUsuarios.getUsuarioLogado().getNome() + "!");
                         System.out.println("""
                                 Menu de opcoes:
                                 1 - Adicionar livro ao sistema
@@ -276,7 +277,7 @@ public class Main {
                                     }
                                     biblioteca.adicionarLivro(livro);
                                 }
-                                else if(tipoLivro.equalsIgnoreCase("academico")){
+                                else if(tipoLivro.equalsIgnoreCase("ficcao")){
                                     System.out.println("Informe o autor do livro: ");
                                     String autorMain = scanner.nextLine();
                                     System.out.println("Informe o id do livro que sera adicionado: ");
@@ -286,7 +287,7 @@ public class Main {
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
 
-                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+                                    LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -311,7 +312,7 @@ public class Main {
                                     System.out.println("Informe o ano de lancamento do livro: ");
                                     String anoDePublicacaoMain = scanner.nextLine();
 
-                                    LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+                                    LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -354,6 +355,7 @@ public class Main {
                         }
                     }
                     else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Aluno){
+                        System.out.println("Bem vindo aluno " + gerenciaListaUsuarios.getUsuarioLogado().getNome() + "!");
                         System.out.println("""
                                 Menu de opcoes:
                                 1 - Pegar livro emprestado(Apenas academicos)
@@ -409,9 +411,30 @@ public class Main {
                                 break;
                         }
                     }
+                    else{
+                        System.out.println("Bem vindo cliente " + gerenciaListaUsuarios.getUsuarioLogado().getNome() + "!");
+                        System.out.println("""
+                                Menu de opcoes:
+                                1 - Pegar livro emprestado [Apenas livros sem ser academicos]
+                                2 - Devolver livro emprestado
+                                3 - Exibir lista de livros disponiveis no sistema
+                                4 - Exibir meus livros
+                                5 - Exibir sinopse de livro
+                                0 - Sair
+                                """);
+                        int respCliente = scanner.nextInt();
+                        scanner.nextLine();
+                        switch (respCliente){
+                            case 1:
+                                break;
+                            case 0:
+                                System.out.println("Encerrando...");
+                                break;
+                        }
+                    }
                 }
 
-                // Alunos so podem pegar emprestado livros academicos, cliente tem permissao para todos os livros
+
 
 
 

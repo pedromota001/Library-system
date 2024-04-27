@@ -71,7 +71,6 @@ public class Biblioteca {
                 achou = true;
                 System.out.println("Adicionando sinopse...");
                 l.setSinopse(sinopse);
-                System.out.println(l.getSinopse());
                 return;
             }
         }
@@ -82,7 +81,7 @@ public class Biblioteca {
     public void exibeSinopse(String nome){
         for(Livro l: listaDeLivros){
             if(l.getTitulo().equalsIgnoreCase(nome)){
-                System.out.println(l.getSinopse());
+                System.out.println("Sinopse: " + l.getSinopse());
                 return;
             }
         }
