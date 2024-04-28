@@ -25,6 +25,6 @@ public class LivroFiccao extends Livro{
 
     @Override
     public String toString() {
-        return super.toString() + "//Alem disso... " + verificaLivro();
+        return super.toString() + "// Alem disso... " + verificaLivro();
     }
 }

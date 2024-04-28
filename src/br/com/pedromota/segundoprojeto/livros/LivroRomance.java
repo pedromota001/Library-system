@@ -38,6 +38,6 @@ public class LivroRomance extends Livro{
 
     @Override
     public String toString() {
-        return super.toString() + "Alem disso..." + vefificaLivro();
+        return super.toString() + "// Alem disso..." + vefificaLivro();
     }
 }

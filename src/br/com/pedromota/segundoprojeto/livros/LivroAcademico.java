@@ -11,8 +11,12 @@ public class LivroAcademico extends Livro{
         return assuntoLivro;
     }
 
+    public void setAssuntoLivro(String assuntoLivro) {
+        this.assuntoLivro = assuntoLivro;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "Assunto do livro academico: " + getAssuntoLivro();
+        return super.toString() + " Assunto do livro academico: " + getAssuntoLivro();
     }
 }
