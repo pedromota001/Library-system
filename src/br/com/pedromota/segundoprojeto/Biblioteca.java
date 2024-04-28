@@ -91,9 +91,9 @@ public class Biblioteca {
 
 
 
-    public Livro emprestimoAluno(String nome){
+    public Livro emprestimoAluno(String id){
         for(Livro l:listaDeLivros){
-            if(l.getTitulo().equalsIgnoreCase(nome) && l instanceof LivroAcademico){
+            if(l.getIdLivro().equalsIgnoreCase(id) && l instanceof LivroAcademico){
                 if(l.isStatus()){
                     l.setStatus(false);
                     return l;
@@ -104,9 +104,9 @@ public class Biblioteca {
         return null;
     }
 
-    public Livro devolucaoAluno(String nome){
+    public Livro devolucaoAluno(String id){
         for(Livro l: listaDeLivros){
-            if(l.getTitulo().equalsIgnoreCase(nome) && l instanceof LivroAcademico){
+            if(l.getIdLivro().equalsIgnoreCase(id) && l instanceof LivroAcademico){
                 if(!l.isStatus()){
                     l.setStatus(true);
                     return l;
@@ -115,6 +115,46 @@ public class Biblioteca {
         }
         System.out.println("Erro ao devolver livro, livro nao encontrado no sistema ou ja disponivel para emprestimo!");
         return null;
+    }
+
+    public Livro emprestimoCliente(String id){
+        for(Livro l:listaDeLivros){
+            if(l.getIdLivro().equalsIgnoreCase(id) && !(l instanceof LivroAcademico)){
+                if(l.isStatus()){
+                    l.setStatus(false);
+                    return l;
+                }
+            }
+        }
+        System.out.println("Erro ao fazer emprestimo, livro nao encontrado, nao disponivel ou o livro selecionado era academico");
+        return null;
+    }
+    public Livro devolucaoCliente(String id){
+        for(Livro l: listaDeLivros){
+            if(l.getIdLivro().equalsIgnoreCase(id) && !(l instanceof LivroAcademico)){
+                if(!l.isStatus()){
+                    l.setStatus(true);
+                    return l;
+                }
+            }
+        }
+        System.out.println("Erro ao devolver livro, livro nao encontrado no sistema ou ja disponivel para emprestimo!");
+        return null;
+    }
+
+    public void exibeDisponiveisAluno(){
+        for(Livro l:listaDeLivros){
+            if(l.isStatus() && l instanceof LivroAcademico){
+                System.out.println(l);
+            }
+        }
+    }
+    public void exibeDisponiveisClientes(){
+        for(Livro l:listaDeLivros){
+            if(l.isStatus() && !(l instanceof LivroAcademico)){
+                System.out.println(l);
+            }
+        }
     }
 }
 

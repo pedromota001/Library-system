@@ -5,6 +5,8 @@ public class Pessoa {
     private String nome;
     private String endereco;
     private String telefone;
+    private String usuario;
+    private String senha;
 
     public String getNome() {
         return nome;
@@ -29,8 +31,7 @@ public class Pessoa {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    private String usuario;
-    private String senha;
+
 
     public Pessoa(String usuario, String senha, String nome, String endereco, String telefone) {
         this.usuario = usuario;
@@ -54,5 +55,10 @@ public class Pessoa {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + "// Endereco: " + getEndereco() + "// Telefone: " + getTelefone();
     }
 }

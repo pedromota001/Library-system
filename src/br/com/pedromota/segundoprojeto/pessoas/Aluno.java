@@ -19,4 +19,13 @@ public class Aluno extends Pessoa{
             System.out.println(l);
         }
     }
+
+    public String getIdAluno() {
+        return idAluno;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Id do aluno: " + getIdAluno();
+    }
 }

@@ -327,10 +327,12 @@ public class Main {
                                     biblioteca.adicionarLivro(livro);
                                 }
                                 break;
+
                             case 2:
                                 System.out.println("Exibindo lista de livros disponiveis no sistema: ");
                                 biblioteca.exibeListaDisponiveis();
                                 break;
+
                             case 3:
                                 System.out.println("Digite o ID do livro: ");
                                 String id = scanner.nextLine();
@@ -338,16 +340,19 @@ public class Main {
                                 String sinopse = scanner.nextLine();
                                 biblioteca.adicionaSinopse(id, sinopse);
                                 break;
+
                             case 4:
                                 System.out.println("Exibindo lista de alunos da biblioteca: ");
                                 gerenciaListaUsuarios.exibirAlunos();
                                 break;
+
                             case 5:
                                 biblioteca.exibeListaDisponiveis();
                                 System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
+
                             case 0:
                                 System.out.println("Encerrando...");
                                 gerenciaListaUsuarios.setUsuarioLogado(null);
@@ -368,23 +373,27 @@ public class Main {
                         int respAluno = scanner.nextInt();
                         scanner.nextLine();
                         switch (respAluno){
+
                             case 1:
-                                biblioteca.exibeListaDisponiveis();
-                                System.out.println("Digite o nome do livro que voce deseja: ");
-                                String nomeLivro = scanner.nextLine();
-                                Livro livro = biblioteca.emprestimoAluno(nomeLivro);
+                                biblioteca.exibeDisponiveisAluno();
+                                System.out.println("Digite o ID do livro que voce deseja: ");
+                                String idLivro = scanner.nextLine();
+                                Livro livro = biblioteca.emprestimoAluno(idLivro);
+
                                 if(livro == null){
                                     System.out.println("Erro ao fazer emprestimo, tente novamente! ");
                                 }
                                 else{
                                     ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.add(livro);
                                 }
+
                                 break;
                             case 2:
                                 ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
-                                System.out.println("Digite o nome do livro que voce ira devolver: ");
-                                String nomeDevolucao = scanner.nextLine();
-                                Livro livro1 = biblioteca.devolucaoAluno(nomeDevolucao);
+                                System.out.println("Digite o ID do livro que voce ira devolver: ");
+                                String idDevolucao = scanner.nextLine();
+                                Livro livro1 = biblioteca.devolucaoAluno(idDevolucao);
+
                                 if(livro1 == null){
                                     System.out.println("Erro ao fazer devolucao, tente novamente!");
                                 }
@@ -392,26 +401,30 @@ public class Main {
                                     ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.remove(livro1);
                                 }
                                 break;
+
                             case 3:
                                 System.out.println("Exibindo lista de disponiveis: ");
-                                biblioteca.exibeListaDisponiveis();
+                                biblioteca.exibeDisponiveisAluno();
                                 break;
+
                             case 4:
                                 ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
                                 break;
+
                             case 5:
                                 biblioteca.exibeListaDisponiveis();
                                 System.out.println("Digite o nome do livro que voce deseja visualizar a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
+
                             case 0:
                                 System.out.println("Encerrando...");
                                 gerenciaListaUsuarios.setUsuarioLogado(null);
                                 break;
                         }
                     }
-                    else{
+                    else if(gerenciaListaUsuarios.getUsuarioLogado() instanceof Cliente){
                         System.out.println("Bem vindo cliente " + gerenciaListaUsuarios.getUsuarioLogado().getNome() + "!");
                         System.out.println("""
                                 Menu de opcoes:
@@ -425,19 +438,60 @@ public class Main {
                         int respCliente = scanner.nextInt();
                         scanner.nextLine();
                         switch (respCliente){
+
                             case 1:
+                                biblioteca.exibeDisponiveisClientes();
+                                System.out.println("Digite o id do livro: ");
+                                String idLivroCliente = scanner.nextLine();
+                                Livro livro = biblioteca.emprestimoCliente(idLivroCliente);
+
+                                if(livro == null){
+                                    System.out.println("Erro ao fazer emprestimo, tente novamente!");
+                                }
+                                else{
+                                    ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.add(livro);
+                                }
                                 break;
+
+                            case 2:
+                                ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosCliente();
+                                System.out.println("Digite o id do livro que voce ira devolver: ");
+                                String idDevolveCliente = scanner.nextLine();
+                                Livro livro1 = biblioteca.devolucaoCliente(idDevolveCliente);
+
+                                if(livro1 == null){
+                                    System.out.println("Erro na devolucao, tente novamente!");
+                                }
+                                else{
+                                    ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).listaLivrosEmprestados.remove(livro1);
+                                }
+
+                                break;
+
+                            case 3:
+                                System.out.println("Exibindo lista de disponiveis: ");
+                                biblioteca.exibeDisponiveisClientes();
+                                break;
+
+                            case 4:
+                                ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosCliente();
+                                break;
+
+                            case 5:
+                                biblioteca.exibeDisponiveisClientes();
+                                System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
+                                String nomeSinopse = scanner.nextLine();
+                                biblioteca.exibeSinopse(nomeSinopse);
+                                break;
+
                             case 0:
                                 System.out.println("Encerrando...");
+                                gerenciaListaUsuarios.setUsuarioLogado(null);
                                 break;
                         }
                     }
                 }
-
-
-
-
-
+//adicionar as mudancas nos livros no main
             }catch (Exception e){
                 System.out.println("Erro, entrada invalida");
                 break;

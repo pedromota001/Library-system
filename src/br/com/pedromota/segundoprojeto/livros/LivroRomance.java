@@ -24,14 +24,20 @@ public class LivroRomance extends Livro{
         super(autor, idLivro, titulo, editora, anoDePublicacao);
     }
 
-    public void vefificaLivro() {
+    public String vefificaLivro() {
         if(isTrianguloAmoroso()){
-            System.out.println("O livro "+ getTitulo() + " tem um triangulo amoroso na sua historia, não perca!");
+            return " O livro "+ getTitulo() + " tem um triangulo amoroso na sua historia, não perca!";
         }
         else{
             if(isCasal()){
-                System.out.println( "O livro " + getTitulo() + " conta a historia de um casal, não perca!");
+                return " O livro " + getTitulo() + " conta a historia de um casal, não perca!";
             }
         }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Alem disso..." + vefificaLivro();
     }
 }

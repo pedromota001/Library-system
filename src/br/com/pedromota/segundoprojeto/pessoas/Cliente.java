@@ -24,4 +24,14 @@ public class Cliente extends Pessoa{
     public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
+    public void imprimeLivrosCliente(){
+        for(Livro l:listaLivrosEmprestados){
+            System.out.println(l);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Id do cliente: " + getIdCliente();
+    }
 }
