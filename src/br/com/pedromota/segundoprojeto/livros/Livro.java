@@ -53,9 +53,6 @@ public abstract class Livro {
         return avaliacaoMedia;
     }
 
-    public void setAvaliacaoMedia(double avaliacaoMedia) {
-        this.avaliacaoMedia = avaliacaoMedia;
-    }
 
     public String getAutor() {
         return autor;
@@ -90,14 +87,16 @@ public abstract class Livro {
     public void setListaAvaliacoes(double nota){
         this.listaAvaliacoes.add(nota);
     }
-    public void avalia(){
+    public double avaliaLivro(){
         for(Double n:listaAvaliacoes){
             avaliacaoMedia += n;
+            return avaliacaoMedia;
         }
+        return 0;
     }
 
     @Override
     public String toString() {
-        return "Titulo: " + getTitulo() + " //Autor: " + getAutor() + " //Editora: " + getEditora() + " //Ano de publicacao: " + getAnoDePublicacao() + " //Avaliacao: " + getAvaliacaoMedia();
+        return "Titulo: " + getTitulo() + "// Id: " + getIdLivro() + " //Autor: " + getAutor() + " //Editora: " + getEditora() + " //Ano de publicacao: " + getAnoDePublicacao() + " //Avaliacao: " + getAvaliacaoMedia();
     }
 }

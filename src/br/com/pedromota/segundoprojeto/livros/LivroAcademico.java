@@ -17,6 +17,6 @@ public class LivroAcademico extends Livro{
 
     @Override
     public String toString() {
-        return super.toString() + " Assunto do livro academico: " + getAssuntoLivro();
+        return super.toString() + " // Assunto do livro academico: " + getAssuntoLivro();
     }
 }

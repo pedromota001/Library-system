@@ -1,11 +1,12 @@
 package br.com.pedromota.segundoprojeto;
 
+import br.com.pedromota.segundoprojeto.avaliacoes.Avalia;
 import br.com.pedromota.segundoprojeto.livros.Livro;
 import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
 
 import java.util.ArrayList;
 
-public class Biblioteca {
+public class Biblioteca implements Avalia {
     public ArrayList<Livro> listaDeLivros;
 
     public Biblioteca() {
@@ -153,6 +154,18 @@ public class Biblioteca {
         for(Livro l:listaDeLivros){
             if(l.isStatus() && !(l instanceof LivroAcademico)){
                 System.out.println(l);
+            }
+        }
+    }
+
+
+    @Override
+    public void pegaavaliacao(String nome, double nota) {
+        for(Livro l: listaDeLivros){
+            if(l.getTitulo().equalsIgnoreCase(nome)){
+                l.setListaAvaliacoes(nota);
+                l.avaliaLivro();
+                break;
             }
         }
     }

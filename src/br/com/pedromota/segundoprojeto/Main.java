@@ -237,6 +237,7 @@ public class Main {
                                 gerenciaListaUsuarios.exibirClientes();
                                 break;
                             case 7:
+                                biblioteca.exibeTodosLivros();
                                 System.out.println("Digite o id do livro: ");
                                 String idSinopse = scanner.nextLine();
                                 System.out.println("Digite a sinopse para esse livro: ");
@@ -390,6 +391,7 @@ public class Main {
                                 3 - Exibir livros disponiveis
                                 4 - Exibir meus livros
                                 5 - Exibir sinopse de livro
+                                6 - Avaliar livro
                                 0 - Sair
                                 """);
                         int respAluno = scanner.nextInt();
@@ -434,10 +436,18 @@ public class Main {
                                 break;
 
                             case 5:
-                                biblioteca.exibeListaDisponiveis();
+                                biblioteca.exibeTodosLivros();
                                 System.out.println("Digite o nome do livro que voce deseja visualizar a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
+                                break;
+                            case 6:
+                                System.out.println("Digite o nome do livro que voce deseja avaliar: ");
+                                String nomeAvalia = scanner.nextLine();
+                                System.out.println("Digite a nota que voce da para esse livro: ");
+                                double notaLivro = scanner.nextDouble();
+                                scanner.nextLine();
+                                biblioteca.pegaavaliacao(nomeAvalia, notaLivro);
                                 break;
 
                             case 0:
@@ -455,6 +465,7 @@ public class Main {
                                 3 - Exibir lista de livros disponiveis no sistema
                                 4 - Exibir meus livros
                                 5 - Exibir sinopse de livro
+                                6 - Avaliar livro
                                 0 - Sair
                                 """);
                         int respCliente = scanner.nextInt();
@@ -500,12 +511,19 @@ public class Main {
                                 break;
 
                             case 5:
-                                biblioteca.exibeDisponiveisClientes();
+                                biblioteca.exibeTodosLivros();
                                 System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
-
+                            case 6:
+                                System.out.println("Digite o nome do livro que voce deseja avaliar: ");
+                                String nomeAvalia = scanner.nextLine();
+                                System.out.println("Digite a nota que voce da para esse livro: ");
+                                double notaLivro = scanner.nextDouble();
+                                scanner.nextLine();
+                                biblioteca.pegaavaliacao(nomeAvalia, notaLivro);
+                                break;
                             case 0:
                                 System.out.println("Encerrando...");
                                 gerenciaListaUsuarios.setUsuarioLogado(null);
