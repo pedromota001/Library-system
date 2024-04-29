@@ -21,6 +21,7 @@ Interfaces: Avalia.
 - O uso do Override do toString para reescrever as impressao das classes foi extremamente util pois assim, conseguimos imprimir de forma mais especifica o que queriamos para cada classe do nosso projeto.
 - Tambem adicionamos um mini easter egg ao usuario que seria basicamente um mini spoiler que deixaria o livro mais interessante antes da leitura
 - O uso de construtores tambem foi essencial para conseguirmos instaciar as classes de forma correta no nosso sistema.
+- Alunos so podem fazer emprestimo de livros academicos, clientes podem fazer emprestimo de todos os livros menos os academicos. Isso se inclui na parte da exibicao das listas de disponiveis para cada um, exibindo somente aquilo que ele pode interagir.
 
 # Interface de usuario
 # Exemplo de algumas funcoes do menu do bibliotecario:
@@ -61,15 +62,15 @@ Interfaces: Avalia.
 ## Log in na conta do professor:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/0f2027ba-2b51-432e-839d-7577b5d47da9)
 
-## Adicionando livro:
+## Registro de livro:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/870804dc-20f4-496a-bb35-b0dcabaaad94)
 
 
-#Exemplo de algumas funcoes do menu de aluno:
+# Exemplo de algumas funcoes do menu de aluno:
 ## Criacao de conta do aluno:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/c99faff8-1994-4072-962e-365b6b1e150b)
 
-## Aluno pegando livro emprestado
+## Emprestimo de livro na conta do aluno
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/5bacd014-a0c4-4049-b981-53944e00183a)
 
 
@@ -87,5 +88,20 @@ Interfaces: Avalia.
 
 
 # Exemplos de algumas funcoes do menu do cliente:
+
+## Log in na conta do cliente:
+![image](https://github.com/pedromota001/Library-system/assets/135559962/861e27c1-13ed-41da-86b5-90c7012c9e1a)
+
+## Emprestimo de livro na conta do cliente:
+![image](https://github.com/pedromota001/Library-system/assets/135559962/419d8357-9b4c-4cbc-9d0f-b0c4665d2b0a)
+
+## Exibindo lista de disponiveis apos o emprestimo
+![image](https://github.com/pedromota001/Library-system/assets/135559962/7cc9fabc-9a75-4d39-a2b1-53b019a7611c)
+
+
+# Saida do sistema
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/5f4de2b8-6924-46b2-aafb-1a18e89ebd9c)
+
 
 
