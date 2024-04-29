@@ -282,6 +282,7 @@ public class Main {
                                 0 - Sair
                                 """);
                         int respProf = scanner.nextInt();
+                        scanner.nextLine();
                         switch (respProf){
                             case 1:
                                 System.out.println("Insira o tipo de livro que voce deseja adicionar: [Romance, academico, suspense] ");
@@ -301,6 +302,17 @@ public class Main {
                                     String anoDePublicacaoMain = scanner.nextLine();
 
                                     LivroRomance livro = new LivroRomance(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    System.out.println("De um mini spoiler ao usuario e diga se o livro tem um triangulo amoroso: [sim/nao]");
+                                    String trianguloAmoroso = scanner.nextLine();
+                                    trianguloAmoroso = trianguloAmoroso.toLowerCase();
+                                    if(trianguloAmoroso.equalsIgnoreCase("sim")){
+                                        livro.setTrianguloAmoroso(true);
+                                    }
+                                    else{
+                                        livro.setTrianguloAmoroso(false);
+                                        livro.setCasal(true);
+                                    }
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -326,6 +338,16 @@ public class Main {
 
                                     LivroFiccao livro = new LivroFiccao(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
 
+                                    System.out.println("De um mini spoiler ao usuario e diga sem tem algum evento sobrenatural no livro: [sim/nao]");
+                                    String eventoSobrenatural = scanner.nextLine();
+                                    eventoSobrenatural = eventoSobrenatural.toLowerCase();
+                                    if(eventoSobrenatural.equalsIgnoreCase("sim")){
+                                        livro.setEventosSobreNaturais(true);
+                                    }
+                                    else{
+                                        livro.setEventosSobreNaturais(false);
+                                    }
+
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
                                     respSinopse =  respSinopse.toLowerCase();
@@ -350,6 +372,10 @@ public class Main {
                                     String anoDePublicacaoMain = scanner.nextLine();
 
                                     LivroAcademico livro = new LivroAcademico(autorMain, idMain, tituloLivro, editoraMain, anoDePublicacaoMain);
+
+                                    System.out.println("Digite o assunto que esse livro academico se trata: ");
+                                    String assuntoMain = scanner.nextLine();
+                                    livro.setAssuntoLivro(assuntoMain);
 
                                     System.out.println("Voce deseja adicionar sinopse para o livro? [Sim/Nao]");
                                     String respSinopse = scanner.next();
@@ -447,6 +473,7 @@ public class Main {
                                 break;
 
                             case 4:
+                                System.out.println("Exibindo lista dos seus livros: ");
                                 ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
                                 break;
 

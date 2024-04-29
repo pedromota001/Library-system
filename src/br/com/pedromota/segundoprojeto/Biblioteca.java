@@ -6,6 +6,7 @@ import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class Biblioteca implements Avalia {
     public ArrayList<Livro> listaDeLivros;
@@ -22,26 +23,30 @@ public class Biblioteca implements Avalia {
             }
         }
         this.listaDeLivros.add(l);
-        this.listaDeLivros.sort(Comparator.comparing(Livro::getIdLivro));
+        this.listaDeLivros.sort(Comparator.comparing(Livro::getTitulo));
         l.setStatus(true);
         System.out.println("Livro adicionado!");
     }
 
 
     public void removerLivro(String id){
+        Iterator<Livro> iterator = listaDeLivros.iterator();
         boolean achou = false;
-        for(Livro livro:listaDeLivros){
-            if(livro.getIdLivro().equalsIgnoreCase(id)){
+        while (iterator.hasNext()) {
+            Livro livro = iterator.next();
+            if (livro.getIdLivro().equalsIgnoreCase(id)) {
                 achou = true;
                 System.out.println("Removendo livro...");
-                this.listaDeLivros.remove(livro);
-                this.listaDeLivros.sort(Comparator.comparing(Livro::getIdLivro));
+                iterator.remove();
+                this.listaDeLivros.sort(Comparator.comparing(Livro::getTitulo));
+                break;
             }
         }
-        if(!achou){
-            System.out.println("Livro nao encontrado, erro na remocao");
+        if (!achou) {
+            System.out.println("Livro não encontrado, erro na remoção");
         }
     }
+
 
     public void exibeListaDisponiveis(){
         for(Livro livro: listaDeLivros){
