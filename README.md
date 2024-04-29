@@ -42,14 +42,19 @@ Interfaces: Avalia.
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/2e50330a-a011-4cf5-aa1c-748f359dc42e)
 
+## Remover livro do sistema
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/463670b2-8cab-473f-9ea9-ed645d8d5779)
 
+## Exibicao de disponiveis apos remocao do livro
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/b0bdd21d-5e6f-4d8a-982b-72b94c3b5be6)
 
+## Exibicao de sinopse dos livros
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/c141e2e9-7f53-4993-9c9b-0c8382d463bc)
 
+## Exibicao de todos os usuarios do sistema
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/bb456d3f-acbc-47c2-a490-ccdf3ffe3372)
 
+## Log in na conta do bibliotecario
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/24580e17-b3be-4e12-8aac-8f6205d1b0b3)
 
 
