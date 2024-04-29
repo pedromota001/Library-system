@@ -12,21 +12,20 @@ Tambem conta com uma classe biblioteca e outra classe GerenciaListaUsuarios, ale
 Interfaces: Avalia.
 
 # Sobre o projeto
-- O sistema consta com todos os requisitos minimos solicitados pelo professor
-- Inicialmente implementamos um sistema de login de usuarios que consiste no uso da collection HashMap, onde nao e permitido ter 2 usuarios com o mesmo nome de usuario. Os usuarios sao divididos em 2 grupos, administradores e clientes, no caso da nossa biblioteca os administradores sao as classes Bibliotecario e Professor e cliente sao as classes Aluno e Cliente.
-- Bibliotecario possui o maior nivel de permissao dentro do sistema e eh capaz de realizar acoes que nenhuma outra classe de Pessoa dentro do sistema pode fazer. Professor tambem possui um certo nivel de permissao maior que o dos clientes porem, nao tao grande como o do bibliotecario. Cliente e Alunos sao os 2 menores niveis de permissao, onde podem realizar apenas acoes basicas de um cliente dentro de uma biblioteca.
-- Achamos util o uso de polimorfismo para conseguir manipular o ArrayList de livros mesmo possuindo varias classes diferentes de livro, porem todas elas sendo um extend da classe mae Livro, possibilitando manipularmos objetos e implementar funcoes que incluissem todas as classes e que proporcionasse a reutilizacao de codigos mesmo se tratando de classes diferentes.
-- Tambem achamos util o uso da abstracao para idealizar melhor um modelo de Livro onde o mesmo nao pode ser instaciado, ja que determinamos bem as classes de livros que tera na nossa biblioteca.
-- O uso do Comparator (.sort) foi util para a ordenacao do ArrayList de forma alfabetica para melhor organizacao da nossa lista de livros.
-- Tambem utilizamos da interface Avalia para definir um contrato do metodo avalia que posteriormente 'e chamado para ajudar na avaliacao dos nossos livros
-- Achamos valido tambem o uso de encapsulamento para manter as boas praticas de programacao e visando tambem uma melhor protecao tanto dos dados dos usuarios como dos livros da biblioteca. Utilizamos de modificadores de acesso como private e public.
-- O try catch foi utilizado no Main para adiantar ao usuario caso alguma entrada seja invalida.
-- Achamos bastante valido o nivel de permissao ser gerenciado atraves dos extends(Herancas) pois conseguimos definir bem os diferentes tipos de pessoa que iriam interagir com o nosso sistema e assim manipular suas permissoes
-- O uso do Override do toString para reescrever as impressao das classes foi extremamente util pois assim, conseguimos imprimir de forma mais especifica o que queriamos para cada classe do nosso projeto.
-- Tambem adicionamos um mini easter egg ao usuario que seria basicamente um mini spoiler que deixaria o livro mais interessante antes da leitura
-- O uso de construtores tambem foi essencial para conseguirmos instaciar as classes de forma correta no nosso sistema.
-- Alunos so podem fazer emprestimo de livros academicos, clientes podem fazer emprestimo de todos os livros menos os academicos. Isso se inclui na parte da exibicao das listas de disponiveis para cada um, exibindo somente aquilo que ele pode interagir.
-- Emprestimos funcionam atraves de um setStatus, que coloca o status do livro como false, devolucao utiliza o setStatus para recolocar como true o status, caso seja false o status do livro, ele nao aparece na lista de disponiveis, apenas na de indisponiveis, onde somente o bibliotecario tem acesso.
+- O sistema atende a todos os requisitos mínimos solicitados pelo professor
+- Inicialmente, implementamos um sistema de login de usuários que utiliza a coleção HashMap, onde não é permitido ter dois usuários com o mesmo nome de usuário. Os usuários são divididos em dois grupos: administradores e clientes. Na nossa biblioteca, os administradores são as classes Bibliotecário e Professor, e os clientes são as classes Aluno e Cliente.
+- O bibliotecário possui o maior nível de permissão dentro do sistema e é capaz de realizar ações que nenhuma outra classe de pessoa dentro do sistema pode fazer. O professor também possui um nível de permissão maior do que o dos clientes, mas não tão grande quanto o do bibliotecário. Clientes e alunos têm os dois menores níveis de permissão, podendo realizar apenas ações básicas de um cliente em uma biblioteca.
+- Achamos útil o uso do polimorfismo para manipular o ArrayList de livros, mesmo tendo várias classes diferentes de livros, pois todas elas são derivadas da classe-mãe Livro. Isso nos permite manipular objetos e implementar funções que incluam todas as classes, proporcionando a reutilização de código mesmo tratando-se de classes diferentes.
+- Também consideramos útil o uso da abstração para idealizar melhor um modelo de Livro que não pode ser instanciado diretamente, já que determinamos bem as classes de livros presentes na nossa biblioteca.
+- Utilizamos a interface Avalia para definir um contrato para o método "avalia", que é posteriormente chamado para ajudar na avaliação dos nossos livros.
+- Achamos válido também o uso do encapsulamento para manter boas práticas de programação e uma melhor proteção tanto dos dados dos usuários quanto dos livros da biblioteca. Usamos modificadores de acesso como "private" e "public".
+- O "try-catch" foi utilizado no método "Main" para informar ao usuário caso alguma entrada seja inválida.
+- Consideramos bastante válido o nível de permissão ser gerenciado através do uso de herança (extends), pois conseguimos definir bem os diferentes tipos de pessoas que iriam interagir com o sistema e, assim, manipular suas permissões.
+- O uso do "Override" no método "toString" para reescrever a impressão das classes foi extremamente útil, pois conseguimos imprimir de forma mais específica o que queríamos para cada classe do projeto.
+- Também adicionamos um mini "easter egg" para o usuário, que é basicamente um mini spoiler para tornar o livro mais interessante antes da leitura.
+- O uso de construtores também foi essencial para instanciar as classes de forma correta no sistema.
+- Os alunos só podem fazer empréstimo de livros acadêmicos, enquanto os clientes podem pegar emprestados todos os livros, exceto os acadêmicos. Isso se reflete na exibição das listas de livros disponíveis para cada um, mostrando apenas aquilo com o qual eles podem interagir.
+- Empréstimos funcionam através de um setStatus, que coloca o status do livro como false, devolução utiliza o setStatus para recolocar como true o status, caso seja false o status do livro, ele não aparece na lista de disponíveis, apenas na de indisponíveis, onde somente o bibliotecário tem acesso.
 
   
 # Interface de usuario
