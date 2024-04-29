@@ -24,6 +24,9 @@ Interfaces: Avalia.
 
 # Interface de usuario
 Exemplo de algumas funcoes do menu do bibliotecario:
+
+## Criação de conta
+
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/51a589b4-5563-42ce-98f5-09d05f85a01a)
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/fc0648e1-8d40-4218-8381-3a5e185452c7)
