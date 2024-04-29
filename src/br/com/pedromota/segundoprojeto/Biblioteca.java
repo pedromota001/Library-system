@@ -5,6 +5,7 @@ import br.com.pedromota.segundoprojeto.livros.Livro;
 import br.com.pedromota.segundoprojeto.livros.LivroAcademico;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Biblioteca implements Avalia {
     public ArrayList<Livro> listaDeLivros;
@@ -21,6 +22,7 @@ public class Biblioteca implements Avalia {
             }
         }
         this.listaDeLivros.add(l);
+        this.listaDeLivros.sort(Comparator.comparing(Livro::getIdLivro));
         l.setStatus(true);
         System.out.println("Livro adicionado!");
     }
@@ -33,6 +35,7 @@ public class Biblioteca implements Avalia {
                 achou = true;
                 System.out.println("Removendo livro...");
                 this.listaDeLivros.remove(livro);
+                this.listaDeLivros.sort(Comparator.comparing(Livro::getIdLivro));
             }
         }
         if(!achou){
