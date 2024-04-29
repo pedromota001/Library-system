@@ -1,7 +1,6 @@
 package br.com.pedromota.segundoprojeto.pessoas;
 
 public class Pessoa {
-    //pessoas que vão interagir c a biblioteca, manipular permissoes atraves de subclasses de pessoas.
     private String nome;
     private String endereco;
     private String telefone;

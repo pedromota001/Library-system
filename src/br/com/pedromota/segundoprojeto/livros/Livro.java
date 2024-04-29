@@ -12,8 +12,6 @@ public abstract class Livro {
     private String anoDePublicacao;
     private double avaliacaoMedia;
     private String sinopse;
-    //manipular permissao de retirar livros a partir do status(disponivel(1) ou emprestado(0).
-    //adicionar novas funcionalidades a classe livro podendo criar subclasses.
 
 
     public Livro(String autor, String idLivro, String titulo, String editora, String anoDePublicacao) {
