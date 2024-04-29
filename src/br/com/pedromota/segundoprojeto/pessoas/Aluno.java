@@ -3,7 +3,7 @@ package br.com.pedromota.segundoprojeto.pessoas;
 import br.com.pedromota.segundoprojeto.livros.Livro;
 
 import java.util.ArrayList;
-//seriam os 2 clientes da biblioteca
+
 public class Aluno extends Pessoa{
     public ArrayList<Livro> listaLivrosEmprestados;
     private String idAluno;

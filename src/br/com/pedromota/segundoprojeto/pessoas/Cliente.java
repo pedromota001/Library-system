@@ -5,8 +5,6 @@ import br.com.pedromota.segundoprojeto.livros.Livro;
 import java.util.ArrayList;
 
 public class Cliente extends Pessoa{
-    //cliente da biblioteca
-    //adicionar outros atributos e niveis de permissao
     private String idCliente;
     public ArrayList<Livro> listaLivrosEmprestados;
 

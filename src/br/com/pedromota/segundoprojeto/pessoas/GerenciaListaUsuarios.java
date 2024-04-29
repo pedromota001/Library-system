@@ -28,9 +28,9 @@ public class GerenciaListaUsuarios {
         }
     }
 
-    public void removerUsuario(Pessoa usuario){
-        if (mapaUsuarios.containsKey(usuario.getUsuario())) {
-            mapaUsuarios.remove(usuario.getUsuario());
+    public void removerUsuario(String nomeUsuario){
+        if (mapaUsuarios.containsKey(nomeUsuario)) {
+            mapaUsuarios.remove(nomeUsuario);
             System.out.println("Usuário removido com sucesso.");
         } else {
             System.out.println("Usuário não encontrado, remoção não efetuada.");

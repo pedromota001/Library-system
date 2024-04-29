@@ -164,7 +164,7 @@ public class Biblioteca implements Avalia {
         for(Livro l: listaDeLivros){
             if(l.getTitulo().equalsIgnoreCase(nome)){
                 l.setListaAvaliacoes(nota);
-                l.avaliaLivro();
+                l.setAvaliacaoMedia(l.avaliaLivro());
                 break;
             }
         }
@@ -188,5 +188,3 @@ public class Biblioteca implements Avalia {
 
 
 
-// metodos adicionar livro, remover livro, adicionar cliente, remover cliente, emprestar livro, devolver livro, manipular permissoes de acordo c subclasses;
-// tentar adicionar diferentes tipos de funcionarios e também um ArrayList de funcionarios.

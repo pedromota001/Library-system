@@ -87,12 +87,22 @@ public abstract class Livro {
     public void setListaAvaliacoes(double nota){
         this.listaAvaliacoes.add(nota);
     }
+
+    public void setAvaliacaoMedia(double avaliacaoMedia) {
+        this.avaliacaoMedia = avaliacaoMedia;
+    }
+
     public double avaliaLivro(){
-        for(Double n:listaAvaliacoes){
-            avaliacaoMedia += n;
-            return avaliacaoMedia;
+        double somaAvaliacoes = 0.0;
+        for(Double n: listaAvaliacoes){
+            somaAvaliacoes += n;
         }
-        return 0;
+        if (!listaAvaliacoes.isEmpty()) {
+            return somaAvaliacoes / listaAvaliacoes.size();
+        }
+        else {
+            return 0.0;
+        }
     }
 
     @Override

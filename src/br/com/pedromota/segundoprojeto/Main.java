@@ -108,6 +108,8 @@ public class Main {
                         System.out.println("Opcao 6 - Exibir lista de clientes");
                         System.out.println("Opcao 7 - Adicionar sinopse a um livro");
                         System.out.println("Opcao 8 - Exibir sinopse de livro");
+                        System.out.println("Opcao 9 - Excluir usuario do sistema");
+                        System.out.println("Opcao 10 - Exibir TODOs os usuarios do sistema");
                         System.out.println("Opcao 0 - Sair");
                         int resp = scanner.nextInt();
                         scanner.nextLine();
@@ -250,6 +252,18 @@ public class Main {
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
+
+                            case 9:
+                                System.out.println("Digite o nome de usuario do usuario que voce deseja remover: ");
+                                String usuarioExcluir = scanner.nextLine();
+                                gerenciaListaUsuarios.removerUsuario(usuarioExcluir);
+                                break;
+
+                            case 10:
+                                System.out.println("Exibindo lista de todos os usuarios do sistema: ");
+                                gerenciaListaUsuarios.exibeUsuariosSistema();
+                                break;
+
                             case 0:
                                 System.out.println("Encerrando...");
                                 gerenciaListaUsuarios.setUsuarioLogado(null);
@@ -357,6 +371,7 @@ public class Main {
                                 break;
 
                             case 3:
+                                biblioteca.exibeListaDisponiveis();
                                 System.out.println("Digite o ID do livro: ");
                                 String id = scanner.nextLine();
                                 System.out.println("Digite a sinopse do livro: ");
@@ -436,12 +451,16 @@ public class Main {
                                 break;
 
                             case 5:
-                                biblioteca.exibeTodosLivros();
+                                biblioteca.exibeDisponiveisAluno();
                                 System.out.println("Digite o nome do livro que voce deseja visualizar a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
                             case 6:
+                                System.out.println("Lista de livros disponiveis no sistema: ");
+                                biblioteca.exibeDisponiveisAluno();
+                                System.out.println("Lista de livros do aluno: ");
+                                ((Aluno) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosEmprestados();
                                 System.out.println("Digite o nome do livro que voce deseja avaliar: ");
                                 String nomeAvalia = scanner.nextLine();
                                 System.out.println("Digite a nota que voce da para esse livro: ");
@@ -507,16 +526,21 @@ public class Main {
                                 break;
 
                             case 4:
+                                System.out.println("Exibindo lista dos seus livros: ");
                                 ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosCliente();
                                 break;
 
                             case 5:
-                                biblioteca.exibeTodosLivros();
+                                biblioteca.exibeDisponiveisClientes();
                                 System.out.println("Digite o nome do livro que voce deseja ver a sinopse: ");
                                 String nomeSinopse = scanner.nextLine();
                                 biblioteca.exibeSinopse(nomeSinopse);
                                 break;
                             case 6:
+                                System.out.println("Lista de livros da biblioteca disponiveis: ");
+                                biblioteca.exibeDisponiveisClientes();
+                                System.out.println("Lista de livros do cliente: ");
+                                ((Cliente) gerenciaListaUsuarios.getUsuarioLogado()).imprimeLivrosCliente();
                                 System.out.println("Digite o nome do livro que voce deseja avaliar: ");
                                 String nomeAvalia = scanner.nextLine();
                                 System.out.println("Digite a nota que voce da para esse livro: ");
@@ -538,3 +562,4 @@ public class Main {
         } while (respConta != 0);
     }
 }
+//revisar erros e editar readme dia 29/04/2024
