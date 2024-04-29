@@ -48,6 +48,20 @@ Exemplo de algumas funcoes do menu do bibliotecario:
 
 
 
+Exemplo de algumas funcoes do menu do professor:
+
+- Criacao de conta do professor
+![image](https://github.com/pedromota001/Library-system/assets/135559962/9d265414-6b45-4ebc-9ed8-e5af25a9d048)
+
+- Log in na conta do professor
+  ![image](https://github.com/pedromota001/Library-system/assets/135559962/0f2027ba-2b51-432e-839d-7577b5d47da9)
+
+- Adicionando livro
+  ![image](https://github.com/pedromota001/Library-system/assets/135559962/870804dc-20f4-496a-bb35-b0dcabaaad94)
+
+
+
+
 
 
 
