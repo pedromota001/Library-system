@@ -28,7 +28,7 @@ Interfaces: Avalia.
 - Empréstimos funcionam através de um setStatus, que coloca o status do livro como false, devolução utiliza o setStatus para recolocar como true o status, caso seja false o status do livro, ele não aparece na lista de disponíveis, apenas na de indisponíveis, onde somente o bibliotecário tem acesso.
 
   
-# Interface de usuario
+# Interface de usuário
 # Exemplo de algumas funcoes do menu do bibliotecario:
 
 ## Criação de conta
