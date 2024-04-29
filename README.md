@@ -23,7 +23,7 @@ Interfaces: Avalia.
 - O uso de construtores tambem foi essencial para conseguirmos instaciar as classes de forma correta no nosso sistema.
 
 # Interface de usuario
-Exemplo de algumas funcoes do menu do bibliotecario:
+# Exemplo de algumas funcoes do menu do bibliotecario:
 
 ## Criação de conta
 
@@ -51,7 +51,7 @@ Exemplo de algumas funcoes do menu do bibliotecario:
 
 
 
-Exemplo de algumas funcoes do menu do professor:
+# Exemplo de algumas funcoes do menu do professor:
 
 ## Criacao de conta do professor:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/9d265414-6b45-4ebc-9ed8-e5af25a9d048)
@@ -63,13 +63,27 @@ Exemplo de algumas funcoes do menu do professor:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/870804dc-20f4-496a-bb35-b0dcabaaad94)
 
 
+#Exemplo de algumas funcoes do menu de aluno:
+## Criacao de conta do aluno:
+![image](https://github.com/pedromota001/Library-system/assets/135559962/c99faff8-1994-4072-962e-365b6b1e150b)
+
+## Aluno pegando livro emprestado
+![image](https://github.com/pedromota001/Library-system/assets/135559962/5bacd014-a0c4-4049-b981-53944e00183a)
+
+
+## Exibicao da sua lista de livros apos o emprestimo
+![image](https://github.com/pedromota001/Library-system/assets/135559962/bb364981-0612-4bda-9ab3-8568930ba277)
+
+
+## Devolucao de livros e exibicao da sua lista livros apos a devolucao
+![image](https://github.com/pedromota001/Library-system/assets/135559962/4c299c15-f0fe-40fb-8d27-f1e582a190d3)
+
+
+## Avaliacao de livro e exibicao de disponiveis apos a devolucao e da avaliacao do aluno
+![image](https://github.com/pedromota001/Library-system/assets/135559962/7a84bb13-1ad1-426c-8caa-4d2663e1dfe3)
 
 
 
-
-
-
-
-
+# Exemplos de algumas funcoes do menu do cliente:
 
 
