@@ -38,6 +38,8 @@ Interfaces: Avalia.
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/10af5a8d-c298-4f43-b3b0-fa01e14075ba)
 
+## Exibir lista de livros
+
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/ff095722-111e-433d-aa77-1bad028e2aba)
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/2e50330a-a011-4cf5-aa1c-748f359dc42e)
