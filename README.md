@@ -29,7 +29,7 @@ Interfaces: Avalia.
 
   
 # Interface de usuário
-# Exemplo de algumas funcoes do menu do bibliotecario:
+# Exemplo de algumas funções do menu do bibliotecario:
 
 ## Criação de conta
 
@@ -50,13 +50,13 @@ Interfaces: Avalia.
 ## Remover livro do sistema
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/463670b2-8cab-473f-9ea9-ed645d8d5779)
 
-## Exibicao de disponiveis apos remocao do livro
+## Exibição de disponiveis após remoção do livro
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/b0bdd21d-5e6f-4d8a-982b-72b94c3b5be6)
 
-## Exibicao de sinopse dos livros
+## Exibição de sinopse dos livros
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/c141e2e9-7f53-4993-9c9b-0c8382d463bc)
 
-## Exibicao de todos os usuarios do sistema
+## Exibição de todos os usuarios do sistema
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/bb456d3f-acbc-47c2-a490-ccdf3ffe3372)
 
 ## Log in na conta do bibliotecario
@@ -64,9 +64,9 @@ Interfaces: Avalia.
 
 
 
-# Exemplo de algumas funcoes do menu do professor:
+# Exemplo de algumas funções do menu do professor:
 
-## Criacao de conta do professor:
+## Criação de conta do professor:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/9d265414-6b45-4ebc-9ed8-e5af25a9d048)
 
 ## Log in na conta do professor:
@@ -76,8 +76,8 @@ Interfaces: Avalia.
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/870804dc-20f4-496a-bb35-b0dcabaaad94)
 
 
-# Exemplo de algumas funcoes do menu de aluno:
-## Criacao de conta do aluno:
+# Exemplo de algumas funções do menu de aluno:
+## Criação de conta do aluno:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/c99faff8-1994-4072-962e-365b6b1e150b)
 
 ## Emprestimo de livro na conta do aluno
@@ -88,16 +88,16 @@ Interfaces: Avalia.
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/bb364981-0612-4bda-9ab3-8568930ba277)
 
 
-## Devolucao de livros e exibicao da sua lista livros apos a devolucao
+## Devolução de livros e exibição da sua lista livros apos a devolução
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/4c299c15-f0fe-40fb-8d27-f1e582a190d3)
 
 
-## Avaliacao de livro e exibicao de disponiveis apos a devolucao e da avaliacao do aluno
+## Avaliação de livro e exibicao de disponiveis após a devolução e da avaliação do aluno
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/7a84bb13-1ad1-426c-8caa-4d2663e1dfe3)
 
 
 
-# Exemplos de algumas funcoes do menu do cliente:
+# Exemplos de algumas funções do menu do cliente:
 
 ## Log in na conta do cliente:
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/861e27c1-13ed-41da-86b5-90c7012c9e1a)
@@ -109,7 +109,7 @@ Interfaces: Avalia.
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/7cc9fabc-9a75-4d39-a2b1-53b019a7611c)
 
 
-# Saida do sistema
+# Saída do sistema
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/5f4de2b8-6924-46b2-aafb-1a18e89ebd9c)
 
