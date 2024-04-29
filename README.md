@@ -22,7 +22,9 @@ Interfaces: Avalia.
 - Tambem adicionamos um mini easter egg ao usuario que seria basicamente um mini spoiler que deixaria o livro mais interessante antes da leitura
 - O uso de construtores tambem foi essencial para conseguirmos instaciar as classes de forma correta no nosso sistema.
 - Alunos so podem fazer emprestimo de livros academicos, clientes podem fazer emprestimo de todos os livros menos os academicos. Isso se inclui na parte da exibicao das listas de disponiveis para cada um, exibindo somente aquilo que ele pode interagir.
+- Emprestimos funcionam atraves de um setStatus, que coloca o status do livro como false, devolucao utiliza o setStatus para recolocar como true o status, caso seja false o status do livro, ele nao aparece na lista de disponiveis, apenas na de indisponiveis, onde somente o bibliotecario tem acesso.
 
+  
 # Interface de usuario
 # Exemplo de algumas funcoes do menu do bibliotecario:
 
