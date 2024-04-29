@@ -23,4 +23,36 @@ Interfaces: Avalia.
 - O uso de construtores tambem foi essencial para conseguirmos instaciar as classes de forma correta no nosso sistema.
 
 # Interface de usuario
-Bibliotecario: 
+Exemplo de algumas funcoes do menu do bibliotecario:
+![image](https://github.com/pedromota001/Library-system/assets/135559962/51a589b4-5563-42ce-98f5-09d05f85a01a)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/fc0648e1-8d40-4218-8381-3a5e185452c7)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/b026fa50-4cef-47ce-8bae-437744a5f1e1)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/10af5a8d-c298-4f43-b3b0-fa01e14075ba)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/ff095722-111e-433d-aa77-1bad028e2aba)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/2e50330a-a011-4cf5-aa1c-748f359dc42e)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/463670b2-8cab-473f-9ea9-ed645d8d5779)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/b0bdd21d-5e6f-4d8a-982b-72b94c3b5be6)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/c141e2e9-7f53-4993-9c9b-0c8382d463bc)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/bb456d3f-acbc-47c2-a490-ccdf3ffe3372)
+
+![image](https://github.com/pedromota001/Library-system/assets/135559962/24580e17-b3be-4e12-8aac-8f6205d1b0b3)
+
+
+
+
+
+
+
+
+
+
+
