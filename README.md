@@ -84,7 +84,7 @@ Interfaces: Avalia.
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/5bacd014-a0c4-4049-b981-53944e00183a)
 
 
-## Exibicao da sua lista de livros apos o emprestimo
+## Exibição da sua lista de livros apos o emprestimo
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/bb364981-0612-4bda-9ab3-8568930ba277)
 
 
