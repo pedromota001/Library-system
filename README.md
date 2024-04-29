@@ -29,6 +29,8 @@ Interfaces: Avalia.
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/51a589b4-5563-42ce-98f5-09d05f85a01a)
 
+## Registro de Livros
+
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/fc0648e1-8d40-4218-8381-3a5e185452c7)
 
 ![image](https://github.com/pedromota001/Library-system/assets/135559962/b026fa50-4cef-47ce-8bae-437744a5f1e1)
