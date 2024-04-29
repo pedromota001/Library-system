@@ -6,3 +6,5 @@ Pessoas: Pessoa(classe-mae), Aluno, Cliente, Bibliotecario, Professor.
 Livros: LivroAcademico, LivroRomance, LivroFiccao.
 Tambem conta com uma classe biblioteca e outra classe GerenciaListaUsuarios, alem do Main.
 Interfaces: Avalia.
+
+# Sobre o projeto
