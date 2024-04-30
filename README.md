@@ -26,7 +26,7 @@ Interfaces: Avalia.
 - O uso de construtores também foi essencial para instanciar as classes de forma correta no sistema.
 - Os alunos só podem fazer empréstimo de livros acadêmicos, enquanto os clientes podem pegar emprestados todos os livros, exceto os acadêmicos. Isso se reflete na exibição das listas de livros disponíveis para cada um, mostrando apenas aquilo com o qual eles podem interagir.
 - Empréstimos funcionam através de um setStatus, que coloca o status do livro como false, devolução utiliza o setStatus para recolocar como true o status, caso seja false o status do livro, ele não aparece na lista de disponíveis, apenas na de indisponíveis, onde somente o bibliotecário tem acesso.
-- Utilizamos bastante o "instaceof" para verificar nas funções quais eram os tipos das intancias dos objetos no nosso sistema
+- Utilizamos bastante o "instaceof" para verificar nas funções quais eram os tipos das instâncias dos objetos no nosso sistema
   
 # Interface de usuário
 # Exemplo de algumas funções do menu do bibliotecario:
